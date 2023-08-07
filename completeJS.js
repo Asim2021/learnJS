@@ -44,8 +44,11 @@ console.log(a+b*c) // 50 s follow bodmass rule
 // The nullish coalescing operator ( ?? ) is a logical operator that returns its RIGHT-HAND SIDE operand when its left-hand side operand is null or undefined , and otherwise returns its left-hand side operand.
 
 // Nullish coalescing means that it allianced with nullish values.
+
 // Nullish Values are : undefined, null.
-// Falsy Values : 0, false, NaN, (null and undefined).
+
+// Falsy Values : 0, false, NaN, null and undefined
+
 // OR Operator Print Right side value if left is false.
 
 // console.log(false || 10); // 10
@@ -78,6 +81,21 @@ function fullName(state) {
 
 // fullName.call(students,"delhi")
 // fullName.call(person,"punjab")
+
+let wizard = {
+  name: 'Merlin',
+  health: 70,
+  heal() {
+    this.health = 100
+  },
+}
+let archer = {
+  name: 'Robin',
+  health: 30,
+}
+// console.log(archer)
+wizard.heal.call(archer)
+// console.log(archer)
 
 function print() {
   console.log(`Hello ${this}`)
@@ -246,8 +264,8 @@ let string = ' olleh ym eman si misa hahs '
 // }
 // console.log(reverseArrayWords(string))
 
-arr = []
-obj5 = { 1: 'one', 2: 'two' }
+let arr = []
+let obj5 = { 1: 'one', 2: 'two' }
 
 // console.log(arr.length) // 0
 // console.log(Array.isArray(arr)) // true
@@ -742,12 +760,13 @@ const increment = () => {
     return i
   }
 }
+
 let myIncrement = increment()
-console.log(myIncrement())
-console.log(myIncrement())
-console.log(myIncrement())
-console.log(myIncrement())
-console.log(myIncrement())
+// console.log(myIncrement())
+// console.log(myIncrement())
+// console.log(myIncrement())
+// console.log(myIncrement())
+// console.log(myIncrement())
 
 //(b) Print num from 1 to 5 using setTimeout (let vs var)
 
@@ -758,8 +777,8 @@ const printToNum = (num = 5) => {
     }, i * 1000)
   }
 }
+// printToNum()
 
-printToNum()
 const counter = () => {
   let count = 0
 
@@ -1035,7 +1054,9 @@ let person1 = {
 /////////==== NOTE ====//////////
 const user = {
   email: 'my@email.com',
-  updateEmail: (email) => (this.email = email),
+  updateEmail(givenEmail) {
+    this.email = givenEmail
+  },
 }
 
 user.updateEmail('new@email.com')
